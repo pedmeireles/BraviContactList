@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ddb02afe-57ef-4d91-8a16-daaec78ede34",
-		"name": "Bravi Contact List",
+		"_postman_id": "020d7aa9-9205-433f-9b0a-2d5eca7e601e",
+		"name": "Bravi Contact List copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -106,13 +106,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/person/2",
+							"raw": "{{URL}}/person/{{personID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"person",
-								"2"
+								"{{personID}}"
 							]
 						}
 					},
@@ -176,15 +176,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Pedro Meireles\"\n}"
+							"raw": "{\n\t\"type\": \"Email\",\n\t\"value\": \"Pedmeireles@gmail.com\"\n}"
 						},
 						"url": {
-							"raw": "{{URL}}/person",
+							"raw": "{{URL}}/person/{{personID}}/contact",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"person"
+								"person",
+								"{{personID}}",
+								"contact"
 							]
 						}
 					},
@@ -207,13 +209,15 @@
 							"raw": "{\n\t\"name\": \"Pedro Elias Lucas Ramos Meireles\"\n}"
 						},
 						"url": {
-							"raw": "{{URL}}/person/{{personID}}",
+							"raw": "{{URL}}/person/{{personID}}/contact/{{contactID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"person",
-								"{{personID}}"
+								"{{personID}}",
+								"contact",
+								"{{contactID}}"
 							]
 						}
 					},
@@ -225,7 +229,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{URL}}/person/{{personID}}/contact/{{contactID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"person",
+								"{{personID}}",
+								"contact",
+								"{{contactID}}"
+							]
 						}
 					},
 					"response": []
